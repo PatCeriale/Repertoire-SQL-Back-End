@@ -8,7 +8,7 @@
 
 GitHub: https://github.com/PatCeriale/repertoire-recipes
 
-Deployed Link: https://repertoire-recipes-back-end.herokuapp.com/
+Deployed Link: https://repertoire-sql-backend.herokuapp.com/
 
 ## **Table of Contents**
 
