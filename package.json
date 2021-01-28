@@ -1,0 +1,20 @@
+{
+  "name": "Repertoire-SQL-Back-End",
+  "version": "1.0.0",
+  "description": "![License badge](https://img.shields.io/badge/license-None-success)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatCeriale/Repertoire-SQL-Back-End.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PatCeriale/Repertoire-SQL-Back-End/issues"
+  },
+  "homepage": "https://github.com/PatCeriale/Repertoire-SQL-Back-End#readme"
+}
