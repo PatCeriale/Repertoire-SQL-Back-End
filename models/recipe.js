@@ -15,13 +15,13 @@ module.exports = function (sequelize, DataTypes) {
     description: {
       type: DataTypes.TEXT,
     },
-    preptime: {
+    prepTime: {
       type: DataTypes.STRING,
     },
-    cooktime: {
+    cookTime: {
       type: DataTypes.STRING,
     },
-    servingsize: {
+    servingSize: {
       type: DataTypes.STRING,
     },
     image: {
@@ -42,9 +42,9 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
 
-  Recipe.associate = function (models) {
-    Recipe.hasMany(models.Ingredients);
-    Recipe.hasMany(models.Instructions);
-  };
+  // Recipe.associate = function (models) {
+  //   Recipe.hasMany(models.Ingredients);
+  //   Recipe.hasMany(models.Instructions);
+  // };
   return Recipe;
 };
