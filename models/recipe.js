@@ -15,6 +15,9 @@ module.exports = function (sequelize, DataTypes) {
     description: {
       type: DataTypes.TEXT,
     },
+    author: {
+      type: DataTypes.STRING,
+    },
     prepTime: {
       type: DataTypes.STRING,
     },
