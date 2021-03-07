@@ -16,15 +16,17 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to Repertoire's back end." });
 });
 
+// Create new recipe
 app.post("/api/newrecipe", function (req, res) {
   db.Recipe.create({
     title: req.body.title,
-    // description: req.body.description,
-    // prepTime: req.body.preptime,
-    // cookTime: req.body.cooktime,
-    // servingSize: req.body.servingSize,
-    // course: req.body.course,
-    // image: req.body.image,
+    description: req.body.description,
+    author: req.body.author,
+    prepTime: req.body.preptime,
+    cookTime: req.body.cooktime,
+    servingSize: req.body.servingSize,
+    course: req.body.course,
+    image: req.body.image,
   })
     .then(function (dbRecipe) {
       // res.redirect("/recipe/:id");
@@ -36,18 +38,26 @@ app.post("/api/newrecipe", function (req, res) {
     });
 });
 
+// Get all recipes
 app.get("/api/recipes", function (req, res) {
-  db.Recipe.findAll({
-    // title: req.body.title,
-    // description: req.body.description,
-    // prepTime: req.body.preptime,
-    // cookTime: req.body.cooktime,
-    // servingSize: req.body.servingSize,
-    // course: req.body.course,
-    // image: req.body.image,
+  db.Recipe.findAll()
+    .then(function (dbRecipe) {
+      res.json(dbRecipe);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// Get one recipe by id
+app.get("/api/recipes/:id", function (req, res) {
+  db.Recipe.findOne({
+    where: {
+      id: req.params.id,
+    },
   })
     .then(function (dbRecipe) {
-      // res.redirect("/recipe/:id");
       res.json(dbRecipe);
     })
     .catch((err) => {
