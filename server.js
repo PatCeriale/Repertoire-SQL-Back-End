@@ -66,6 +66,38 @@ app.get("/api/recipes/:id", function (req, res) {
     });
 });
 
+// Delete recipe by id
+app.delete("/api/recipes/:id", function (req, res) {
+  db.Recipe.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then(function (dbRecipe) {
+      res.json(dbRecipe);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// Update recipe by id
+app.put("/api/recipes", function (req, res) {
+  db.Recipe.update(req.body, {
+    where: {
+      id: req.body.id,
+    },
+  })
+    .then(function (dbRecipe) {
+      res.json(dbRecipe);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 db.sequelize.sync({ force: false }).then(function () {
   app.listen(PORT, function () {
     console.log("Listening for your recipe selection on PORT " + PORT);
